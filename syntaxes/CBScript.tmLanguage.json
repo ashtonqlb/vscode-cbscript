@@ -1,0 +1,85 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "CBScript",
+    "scopeName": "source.cbscript",
+    "fileTypes": ["cbscript", "cblib"],
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#delimiters"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "punctuation.definition.comment.cbscript",
+                    "match": "(?i)\\b(?:#\\/\\/|00\\/\\*\\*)"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.cbscript",
+                    "match": "(?:\\[(?:-?\\d*\\.?\\d+)\\])|(?<!\\w)(-?\\d*\\.?\\d+)(?!\\w)"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.assignment.compound.cbscript",
+                    "match": "[\\/:=~\\[\\](),%*+\\-^!<>{}.&]"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name" : "keyword.control.cbscript",
+                    "match": "\\b(?:for|dir|at|in|end|as|not|and|or|move|create|tell|reset|clock|function|if|then|do|else|detect|return|while|macro|block|block_tag|entity_tag|item_tag|define|byte|double|float|int|long|short|True|False|rotated|facing|unless|align|desc|to|by|here|scale|None|title|subtitle|actionbar|switch|case|array|import|remove|success|result|shaped|recipe|keys|advancement|loot_table|predicate|default|push|pop|name|with|macros|on)\\b"
+                },
+                {
+                    "name" : "keyword.command.cbscript",
+                    "match": "\\b(?:advancement|bossbar|clear|clone|data|datapack|debug|defaultgamemode|difficulty|effect|enchant|execute|experience|fill|forceload|function|gamemode|gamerule|give|help|kill|list|locate|me|msg|particle|playsound|recipe|reload|replaceitem|say|scoreboard|seed|setblock|setworldpsawn|spawnpoint|spreadplayers|stopsound|summon|tag|team|teleport|tell|tellraw|time|title|tp|trigger|w|weather|worldborder|xp|gamemode|creative|survival|adventure|spectator|distance|type|entity|limit|sort|nearest|furthest|random|arbitrar|level|team|run|merge|get|set|feet|eyes|item|loot)\\b"
+                },
+                {
+                    "name" : "keyword.minecraft.cbscript",
+                    "match": "\\b(?:hotbar|inventory|armor|mine|weapon|mainhand|offhand|feet|legs|chest|head|container|enderchest|horse|armor|chest|saddle|villager)\\b"
+                },
+                {
+                    "name" : "keyword.gamerule.cbscript",
+                    "match": "\\b(?:air|announceAdvancements|commandBlockOutput|disableElytryMovementCheck|disableRaids|doDaylightCycle|doEntityDrops|doFireTick|doImmediateRespawn|doInsomnia|doLimitedCrafting|doMobLoot|doMobSpawning|doTileDrops|doWeatherCycle|drowningDamage|fallDamage|fireDamage|keepInventory|logAdminCommands|maxCommandChainLength|maxEntityCramming|mobGriefing|naturalRegeneration|randomTickSpeed|reducedDebugInfo|sendCommandFeedback|showDeathMessages|spawnRadius|spectatorsGenerateChunks)\\b"
+                },
+                {
+                    "name" : "keyword.boolean.cbscript",
+                    "match": "\\b(?:true|false)\\b"
+                },
+                {
+                    "name" : "keyword.minecraft.cbscript",
+                    "match": "\\b(?:level|stats|recipes|advancements|survival|adventure|creative|spectator|condition|player|storage|chance|fluid|tag|nbt|state|light|position|x|y|z|flags|biome|value|min|max|period|nbt|state|offsetX|offsetY|offsetZ|is_on_fire|is_sneaking|is_sprinting|is_swimming|is_baby|scores|inverted|term|inverse|killed_by_player|alternative|terms|block_state_property|properties|damage_source_properties|entity_present|biome|dimension|feature|match_tool|name|raining|thundering|enchantments|enchantment|levels|attacker|controller|leasher|origin|owner|passengers|target|vehicle)\\b"
+                }
+            ]
+        },
+        "delimiters": {
+            "patterns": [
+                {
+                    "name:" : "punctuation.separator.delimiter.cbscript", 
+                    "match": "(?i)(?:00\"|00\\\\|00'|00\\\\')"
+                }
+            ]
+        }
+    }
+}

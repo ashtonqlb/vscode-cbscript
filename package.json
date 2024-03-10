@@ -1,0 +1,25 @@
+{
+  "name": "vscode-cbscript",
+  "displayName": "CBScript",
+  "description": "CBScript language support for Visual Studio Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "cbscript",
+      "aliases": ["CBScript", "cbscript"],
+      "extensions": [".cbscript",".cblib"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "cbscript",
+      "scopeName": "source.cbscript",
+      "path": "./syntaxes/CBScript.tmLanguage.json"
+    }]
+  }
+}

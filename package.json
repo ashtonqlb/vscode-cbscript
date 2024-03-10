@@ -2,6 +2,8 @@
   "name": "vscode-cbscript",
   "displayName": "CBScript",
   "description": "CBScript language support for Visual Studio Code",
+  "repository": "https://github.com/ashtonqlb/vscode-cbscript",
+  "icon": "./icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.87.0"

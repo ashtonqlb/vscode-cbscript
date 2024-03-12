@@ -24,11 +24,12 @@
         "comments": {
             "patterns": [
                 {
-                    "name": "punctuation.definition.comment.cbscript",
-                    "match": "(?i)\\b(?:#\\/\\/|00\\/\\*\\*)"
+                    "name": "comment.line.cbscript",
+                    "match": "#.*$"
                 }
             ]
         },
+
         "numbers": {
             "patterns": [
                 {
@@ -40,11 +41,12 @@
         "operators": {
             "patterns": [
                 {
-                    "name": "keyword.operator.assignment.compound.cbscript",
-                    "match": "[\\/:=~\\[\\](),%*+\\-^!<>{}.&]"
+                    "name": "keyword.operator.logical.cbscript",
+                    "match": "[:\/=~,\\[\\]()%*+\\-^!<>.\\{\\}&]|(\\+\\+)|(\\-\\-)"
                 }
             ]
         },
+
         "keywords": {
             "patterns": [
                 {
@@ -68,6 +70,14 @@
                     "match": "\\b(?:true|false)\\b"
                 },
                 {
+                    "name": "variable.other.cbscript",
+                    "match": "\\$\\w+"
+                },
+                {
+                    "name": "variable.at_symbol.cbscript",
+                    "match": "\\@\\w+"
+                },
+                {
                     "name" : "keyword.minecraft.cbscript",
                     "match": "\\b(?:level|stats|recipes|advancements|survival|adventure|creative|spectator|condition|player|storage|chance|fluid|tag|nbt|state|light|position|x|y|z|flags|biome|value|min|max|period|nbt|state|offsetX|offsetY|offsetZ|is_on_fire|is_sneaking|is_sprinting|is_swimming|is_baby|scores|inverted|term|inverse|killed_by_player|alternative|terms|block_state_property|properties|damage_source_properties|entity_present|biome|dimension|feature|match_tool|name|raining|thundering|enchantments|enchantment|levels|attacker|controller|leasher|origin|owner|passengers|target|vehicle)\\b"
                 }
@@ -76,10 +86,16 @@
         "delimiters": {
             "patterns": [
                 {
-                    "name:" : "punctuation.separator.delimiter.cbscript", 
-                    "match": "(?i)(?:00\"|00\\\\|00'|00\\\\')"
+                    "name": "punctuation.definition.string.begin.cbscript",
+                    "begin": "\"",
+                    "end": "\"",
+                    "captures": {
+                        "0": {
+                            "name": "punctuation.definition.string.begin.cbscript"
+                        }
+                    }
                 }
             ]
-        }
+        }        
     }
 }
